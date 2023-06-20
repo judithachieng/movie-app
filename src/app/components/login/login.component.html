@@ -1,0 +1,31 @@
+<div class="container">
+<div class="login-form-container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <h2>Movie App</h2>
+        <h3>Login</h3>
+        <hr>
+        <div class="input-wrapper">
+          <label>Email:</label>
+          <input type="email" formControlName="email" required>
+          <!-- <div *ngIf="loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+            <div *ngIf="loginForm.get('email').hasError('required')">Email is required.</div>
+            <div *ngIf="loginForm.get('email').hasError('email')">Invalid email format.</div>
+          </div> -->
+        </div>
+        <div class="input-wrapper">
+          <label>Password:</label>
+          <input type="password" formControlName="password" required>
+          <!-- <div *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+            <div *ngIf="loginForm.get('password').hasError('required')">Password is required.</div>
+          </div> -->
+        </div>
+        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+        <!-- <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div> -->
+      </form>
+</div>
+<div class="login-image-container">
+   
+</div>
+</div>
+
+  
