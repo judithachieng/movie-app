@@ -1,0 +1,22 @@
+<app-nav></app-nav>
+<div class="content">
+    <div class="suggestion-list">
+        <h2>Suggested Movies</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Reason</th>
+              <th>Image</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let suggestion of suggestions">
+              <td>{{ suggestion.type }}</td>
+              <td>{{ suggestion.reason }}</td>
+              <td><img *ngIf="suggestion.image" [src]="suggestion.image" alt="Movie Image" /><img *ngIf="!suggestion.image" src="../../../assets/images/login-page-image.png" alt="Movie Image" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>

@@ -1,5 +1,6 @@
 <app-nav></app-nav>
 <div class="content">
+  <h2>Latest Movies</h2>
     <div *ngIf="loading">
         <app-loading></app-loading>
       </div>
@@ -9,7 +10,7 @@
           <img *ngIf="!movie.primaryImage?.url" src="../../../assets/images/login-page-image.png"
                         >
           <!-- <div class="text"> -->
-            <h5 class="text">{{ movie.titleText.text }}</h5>
+            <h5 class="text">{{ movie.titleText.text | swahiliTranslate }}</h5>
             <h5 class="year">{{movie?.releaseDate.year }}</h5>
           <!-- </div> -->
         </article>

@@ -26,7 +26,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-  errorMessage!: string;
+  loginError = false;
 
 
   constructor(
@@ -43,14 +43,19 @@ export class LoginComponent implements OnInit {
   }
   
   onSubmit(): void {
-    this.errorMessage = '';
-    const { email, password } = this.loginForm.value;
-    
-    if (this.authService.authenticate(email, password)) {
-      // Authentication successful, redirect to home
+  if (this.loginForm.valid) {
+    const email = this.loginForm.value.email;
+    const password = this.loginForm.value.password;
+    const isLoggedIn = this.authService.login(email, password);
+
+    if (isLoggedIn) {
+      // Successful login
+      // Redirect to dashboard or desired page
       this.router.navigate(['/home']);
     } else {
-      this.errorMessage = 'Invalid email or password.';
+      // Failed login
+      this.loginError = true;
     }
   }
+}
 }

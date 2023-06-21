@@ -6,6 +6,7 @@ import { AuthGuard } from './services/auth/auth-guard.service';
 import { UpcomingMoviesComponent } from './components/upcoming-movies/upcoming-movies.component';
 import { SearchMoviesComponent } from './components/search-movies/search-movies.component';
 import { SuggestMoviesComponent } from './components/suggest-movies/suggest-movies.component';
+import { SuggestListComponent } from './components/suggest-list/suggest-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'upcoming', component: UpcomingMoviesComponent },
   { path: 'search', component: SearchMoviesComponent },
   { path: 'recommend', component: SuggestMoviesComponent },
+  { path: 'recommend-list', component: SuggestListComponent}
   
 ];
 
