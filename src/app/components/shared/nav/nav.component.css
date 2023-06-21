@@ -32,6 +32,8 @@ header{
     transition: 0.5s;
     transition-property: background;
   }
+
+  
   
   .logout_btn:hover{
     background: #0B87A6;
@@ -49,12 +51,6 @@ header{
     transition-property: left;
   }
   
-  /* .sidebar .profile_image{
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-    margin-bottom: 10px;
-  } */
   
   .sidebar h4{
     color: #ccc;

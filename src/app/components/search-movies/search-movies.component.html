@@ -5,7 +5,10 @@
         <h2>Movie Search</h2>
       
         <div class="search-form">
-          <input type="text" [(ngModel)]="query" placeholder="Enter a movie title" (input)="searchMovies()">
+          <input type="text" class="search-input" [(ngModel)]="query" placeholder="Enter a movie title" (input)="searchMovies()">
+          <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+         </button>
         </div>
       
         <div *ngIf="loading" class="loading">

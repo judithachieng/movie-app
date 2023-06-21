@@ -14,6 +14,8 @@ import { NavComponent } from './components/shared/nav/nav.component';
 import { PaginationComponent } from './components/shared/pagination/pagination.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { SuggestListComponent } from './components/suggest-list/suggest-list.component';
+import { SwahiliTranslatePipe } from './pipes/swahili-translate.pipe';
 
 
 @NgModule({
@@ -27,6 +29,8 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     NavComponent,
     PaginationComponent,
     LoadingComponent,
+    SuggestListComponent,
+    SwahiliTranslatePipe,
     
   ],
   imports: [
