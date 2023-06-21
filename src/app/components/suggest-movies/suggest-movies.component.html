@@ -1,5 +1,40 @@
 
 <app-nav></app-nav>
 <div class="content">
-    <p>suggest-movies works!</p>  
+    <div class="movie-suggestion">
+        <h2>Suggest a Movie Or A Sequel</h2>
+        <form [formGroup]="suggestionForm" (ngSubmit)="submitSuggestion()">
+            <div class="row">
+                <div class="label-container">
+                    <label for="type">Type:</label>
+                </div>
+                <div class="input-container">
+                    <select formControlName="type" id="type">
+                        <option value="suggest">Suggest New</option>
+                        <option value="recommend">Recommend Part Two</option>
+                      </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="label-container">
+                    <label for="image">Image:</label>
+                </div>
+                <div class="input-container">
+                    <input type="file" (change)="handleImageUpload($event)" accept="image/*" id="image" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="label-container">
+                    <label for="reason">Reason:</label></div>
+                <div class="input-container"> 
+                    <textarea formControlName="reason" id="reason" rows="4">
+
+                    </textarea>
+                </div>
+            </div>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+  
 </div>

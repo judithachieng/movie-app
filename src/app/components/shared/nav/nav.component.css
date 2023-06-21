@@ -32,6 +32,8 @@ header{
     transition: 0.5s;
     transition-property: background;
   }
+
+  
   
   .logout_btn:hover{
     background: #0B87A6;

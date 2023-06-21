@@ -3,33 +3,28 @@ import { Injectable } from '@angular/core';
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
-  private authenticated = false;
-  private userEmail: string | null = null;
+  isLoggedIn = false;
+  userEmail: string | null = null;
 
-  authenticate(email: string, password: string): boolean {
-    // Simulate authentication with mock credentials
+  login(email: string, password: string): boolean {
+    // Simulate server authentication
     if (email === 'yourname@gmail.com' && password === 'Password.0707') {
-      this.authenticated = true;
+      this.isLoggedIn = true;
       this.userEmail = email;
+      localStorage.setItem('email', email);
       return true;
+    } else {
+      this.isLoggedIn = false;
+      this.userEmail = null;
+      localStorage.removeItem('email');
+      return false;
     }
-
-    this.authenticated = false;
-    this.userEmail = null;
-    return false;
-  }
-
-  isAuthenticated(): boolean {
-    return this.authenticated;
-  }
-
-  getUserEmail(): string | null {
-    return this.userEmail;
   }
 
   logout(): void {
-    this.authenticated = false;
+    this.isLoggedIn = false;
     this.userEmail = null;
+    localStorage.removeItem('email');
   }
 }
 
