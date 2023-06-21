@@ -1,0 +1,28 @@
+
+<app-nav></app-nav>
+<div class="content">
+    <div class="movie-search">
+        <h2>Movie Search</h2>
+      
+        <div class="search-form">
+          <input type="text" [(ngModel)]="query" placeholder="Enter a movie title" (input)="searchMovies()">
+        </div>
+      
+        <div *ngIf="loading" class="loading">
+          Loading...
+        </div>
+      
+        <div class="movie-card-container">
+          <div *ngFor="let movie of movies" class="movie-card">
+            <div class="skeleton-loader" *ngIf="loading"></div>
+            <div *ngIf="!loading">
+              <img [src]="movie.Poster" alt="Movie Poster">
+              <h6>{{ movie.Title }}</h6>
+              <h6>{{ movie.Year }}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+</div>

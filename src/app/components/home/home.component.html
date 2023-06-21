@@ -1,0 +1,24 @@
+<app-nav></app-nav>
+<div class="content">
+    <div *ngIf="loading">
+        <app-loading></app-loading>
+      </div>
+      <main *ngIf="movies && !loading" class="grid">
+        <article *ngFor="let movie of movies">
+          <img *ngIf="movie.primaryImage?.url" [src]="movie.primaryImage?.url" alt="Sample photo">
+          <img *ngIf="!movie.primaryImage?.url" src="../../../assets/images/login-page-image.png"
+                        >
+          <!-- <div class="text"> -->
+            <h5 class="text">{{ movie.titleText.text }}</h5>
+            <h5 class="year">{{movie?.releaseDate.year }}</h5>
+          <!-- </div> -->
+        </article>
+        </main>
+
+        <app-pagination *ngIf="movies && !loading"
+    [currentPage]="currentPage"
+    [pageSize]="pageSize"
+    [totalItems]="totalMovies"
+    (pageChanged)="onPageChange($event)"
+  ></app-pagination>
+</div>
