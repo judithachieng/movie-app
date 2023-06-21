@@ -4,3 +4,12 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.content{
+    margin-left: 250px;
+    /* background: url(background.png) no-repeat; */
+    padding: 100px 20px;
+    height: 100vh;
+    transition: 0.5s;
+  }
+
